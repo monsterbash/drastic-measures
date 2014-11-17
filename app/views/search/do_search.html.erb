@@ -1,0 +1,15 @@
+<h1>Search results</h1>
+<p>Lists found users</p>
+
+<% @users.each do |user| %>
+
+<div class="user-result" id="<%= user.id %>">
+	<img src="<%= user.profile_picture %>">
+	<%= user.full_name %>
+	<%= form_tag :controller =>  'search', :action => 'do_unfollow' do %>
+		<input type="hidden" name="userid" value="<%= user.id %>">
+		<%= submit_tag("Unfollow") %>
+	<% end %>
+</div>
+
+<% end %>

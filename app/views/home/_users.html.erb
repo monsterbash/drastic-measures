@@ -1,0 +1,7 @@
+<ul>
+	<% unless @users.nil? %>
+	<% @users.each do |user| %>
+	<li><%= user.full_name %></li>
+	<% end %>
+	<% end %>
+</ul>
